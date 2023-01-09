@@ -5,6 +5,8 @@ import com.github.jinahya.bit.io.BitOutput;
 import java.io.IOException;
 import java.util.Enumeration;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.tree.TreeNode;
 
 public class HuffmanParentNode implements HuffmanTreeNode {
@@ -102,8 +104,12 @@ public class HuffmanParentNode implements HuffmanTreeNode {
 	}
 
 	@Override
-	public char decode(BitInput in) throws IOException {
-		if (!in.readBoolean()) return left.decode(in);
-		else return right.decode(in);
+	public Character decode(BitInput in) {
+		try {
+			if (!in.readBoolean()) return left.decode(in);
+			else return right.decode(in);
+		} catch (IOException ex) {
+			return null;
+		}
 	}
 }

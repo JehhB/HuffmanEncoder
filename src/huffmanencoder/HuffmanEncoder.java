@@ -407,12 +407,9 @@ public class HuffmanEncoder extends javax.swing.JFrame {
 			}
 
 			String acc = "";
-			while (true) {
-				try {
-					acc += root.decode(in);
-				} catch (IOException ex) {
-					break;
-				}
+			Character c;
+			while ((c = root.decode(in)) != null) {
+				acc += c;
 			}
 			editorText.setText(acc);
 

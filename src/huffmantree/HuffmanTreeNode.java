@@ -18,7 +18,7 @@ public interface HuffmanTreeNode extends TreeNode, Comparable<HuffmanTreeNode> {
 
 	public void encodeTree(BitOutput out) throws IOException;
 
-	public char decode(BitInput in) throws IOException;
+	public Character decode(BitInput in);
 
 	public default int getLevel() {
 		var parent = (HuffmanTreeNode) getParent();

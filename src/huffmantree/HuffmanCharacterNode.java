@@ -93,7 +93,7 @@ class HuffmanCharacterNode implements HuffmanTreeNode {
 	}
 
 	@Override
-	public char decode(BitInput in) throws IOException {
+	public Character decode(BitInput in) {
 		return character;
 	}
 
